@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { Button, buttonVariants } from './ui/button'
+import { ThemeToggle } from './themeToggle'
 
 const navLinks = [
     {title: "Home", url: "/", id: 1},
@@ -16,9 +18,23 @@ export default function Navbar() {
                         Next <span className='text-blue-500'>Pro</span>
                     </Link>
 
-                    <div className="flex items-center gap-3">
-                        
+                    <div className="flex items-center gap-2">
+                        {navLinks.map((item)=> (
+                            <Link className={buttonVariants({variant: "ghost"})} href={item.url} key={item.id}>{item.title}</Link>
+                        ))}
                     </div>
+                </div>
+
+                {/* Right Side = Theme toggle + Buttons */}
+
+                <div className="flex gap-2 items-center">
+                    <Button asChild variant='ghost'>
+                        <Link href="/sign-in">Sign In</Link>
+                    </Button>
+                    <Button asChild>
+                        <Link href="/sign-up">Sign Up</Link>
+                    </Button>
+                    <ThemeToggle />
                 </div>
             </nav>
         </header>

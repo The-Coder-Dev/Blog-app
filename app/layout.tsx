@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
 
 
@@ -21,12 +22,21 @@ export default function RootLayout({
 }>) {
   return (
     <html
-    suppressHydrationWarning
+      suppressHydrationWarning
       lang="en"
       className={`${inter.className} antialiased`}
     >
       <body>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="w-full max-w-370 mx-auto">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

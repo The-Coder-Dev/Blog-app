@@ -10,7 +10,7 @@ const navLinks = [
 
 export default function Navbar() {
     return (
-        <header className='w-full px-3 py-3 '>
+        <header className='w-full py-3 '>
             <nav className='w-full flex items-center justify-between'>
                 {/* Left Side = Logo + Links */}
                 <div className="flex items-center gap-4">

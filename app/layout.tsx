@@ -21,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
+    suppressHydrationWarning
       lang="en"
       className={`${inter.className} antialiased`}
     >

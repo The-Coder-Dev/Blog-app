@@ -28,7 +28,7 @@ export default function Navbar() {
                 {/* Right Side = Theme toggle + Buttons */}
 
                 <div className="flex gap-2 items-center">
-                    <Button asChild variant='ghost'>
+                    <Button asChild variant='outline'>
                         <Link href="/sign-in">Sign In</Link>
                     </Button>
                     <Button asChild>
